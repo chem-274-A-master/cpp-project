@@ -1,8 +1,13 @@
 # Project 3
 
-For this project, you will write a functioning matrix class in C++. We are
-leaving some details up to you - a lot of programming is determining, from
-a specification, how something should be implemented.
+For this project, you will write a functioning matrix class in C++.
+
+Note that we are giving you a general specification, and leaving the details
+up to you.  This is common in software development - we often have to make
+decisions about an implementation where there is no 'correct' answer, but
+multiple ways of doing things, each with their own benefits and drawbacks.
+
+
 
 ## Required features
 
@@ -10,20 +15,26 @@ a specification, how something should be implemented.
    type. Particularly, it should work with `double`, `float`,
    and `int`, along with the `std::complex` variations of those types.
 
-2. There should be three constructors - one with no arguments, one with the
-   desired number of rows/columns, and a copy constructor.
+2. The matrix should be constructable three different ways:
+    1. With no arguments (`Matrix m()`)
+    2. With the desired number of rows and columns (`Matrix m(3,2)`)
+    3. Copy constructor
 
 3. The matrix should have the ability to be resized. When using this function,
    the user should assume that any existing data is either destroyed or
    invalid after resizing
 
-4. You should have the following operations:
+4. The class should support the following operations:
    1. Matrix addition (can overload the + operator) 
    2. Matrix multiplication (can overload the * operator)
    3. Matrix element-wise multiplication
-   4. Copy constructor and assignment operator (you don't have to necessarily write one, but it must be supported!)
-   5. Comparison of two matrices (overload `operator==`. **HINT:** look up documentaton for `std::equal`)
-   6. Printing of the matrix to a `std::ostream` object.
+   4. Assignment operator
+   5. Fill the matrix with a particular value
+   6. Comparison of two matrices (overload `operator==`. **HINT:** look up documentaton for `std::equal`)
+   7. Printing of the matrix to a `std::ostream` object.
+   8. Transposing a matrix in-place
+   9. A function that returns the transpose of a matrix
+   10. For extra credit: Computing the eigenvalues and eigenvectors of a matrix
 
 5. Accessing the elements of the matrix should be the parentheses operator. Ie, you should be able to
    access element 2,3 via `mat(2,3)`.
@@ -33,5 +44,10 @@ should throw exceptions when operations aren't valid (ie, matrix multiplication
 of incompatible sizes).
 
 Since this is a templated class, it should exist completely in a header
-file. Also create a `.cpp` source file to demonstrate your matrix class and
+file.
+
+Finally, create a `.cpp` source file to demonstrate your matrix class and
 its capabilities.
+
+Your project should have README documenting your class, and a Makefile
+that compiles your example/test `.cpp` file.
