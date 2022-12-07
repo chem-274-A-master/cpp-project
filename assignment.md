@@ -1,4 +1,4 @@
-# Project 3
+# C++ Final Project
 
 For this project, you will write a functioning matrix class in C++.
 
@@ -21,7 +21,7 @@ multiple ways of doing things, each with their own benefits and drawbacks.
 
 3. The matrix should have the ability to be resized. When using this function,
    the user should assume that any existing data is either destroyed or
-   invalid after resizing
+   invalid after resizing.
 
 4. The class should support the following operations:
    1. Matrix addition (can overload the + operator) 
