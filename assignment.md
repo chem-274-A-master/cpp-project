@@ -1,11 +1,14 @@
 # C++ Final Project
 
-For this project, you will write a functioning matrix class in C++.
+For this project, you will write a fully-functioning matrix class in C++. This class will support
+multiple ways of instantiating and manipulating matrices, as well as some of the 
+more the common matrix operations.
 
-Note that we are giving you a general specification, and leaving the details
-up to you.  This is common in software development - we often have to make
-decisions about an implementation where there is no 'correct' answer, but
-multiple ways of doing things, each with their own benefits and drawbacks.
+We are giving you only a general specification and some individual function requirements,
+leaving the implementation details up to you.  This is common in software development - we often have to make
+decisions about an implementation where there is no single 'correct' answer, but
+multiple ways of doing things. Understanding the benefits and drawbacks of various designs
+is a large part of software engineering.
 
 
 ## Required features
@@ -15,30 +18,33 @@ multiple ways of doing things, each with their own benefits and drawbacks.
    and `int`, along with the `std::complex` variations of those types.
 
 2. The matrix should be constructable three different ways:
-    1. With no arguments (`Matrix m()`)
-    2. With the desired number of rows and columns (`Matrix m(3,2)`)
-    3. Copy constructor
+    1. With no arguments (`Matrix m;`)
+    2. With a desired number of rows and columns (`Matrix m(3,2)`)
+    3. Via copying an existing matrix
 
-3. The matrix should have the ability to be resized. When using this function,
+3. Accessing the elements of the matrix should be the parentheses operator. Ie, you should be able to
+   access element 2,3 via `mat(2,3)`.
+   
+4. The matrix should have the ability to be resized. When using this function,
    the user should assume that any existing data is either destroyed or
-   invalid after resizing.
+   invalid after resizing. 
 
-4. The class should support the following operations:
-   1. Matrix addition (can overload the + operator) 
-   2. Matrix multiplication (can overload the * operator)
+5. The class should support the following operations:
+   1. Matrix addition (overload the `+` operator) 
+   2. Matrix multiplication (overload the `*` operator)
    3. Matrix element-wise multiplication
-   4. Assignment operator (assignment of one matrix to another)
-   5. Fill the matrix with a particular value
+   4. Assignment of one matrix to another via the `=` operator
+   5. Filling the matrix with a particular value
+      1. via a `.fill()` member function
+      2. via assignment of a scalar value (`m = 5;`)
    6. Comparison of two matrices (overload `operator==`. **HINT:** look up documentaton for `std::equal`)
    7. Printing of the matrix to a `std::ostream` object.
-   9. A function that returns the transpose of the matrix
-   10. A function that returns the complex conjugate of the matrix
-   11. A function that returns the conjugate transpose of the matrix
-   12. Functions that perform the transpose, complex conjugate, and conjugate transpose in place (ie, they modify the matrix rather than return a new one)
-   10. **For extra credit:** Computing the eigenvalues and eigenvectors of a matrix (should use blas/lapack internally)
-
-5. Accessing the elements of the matrix should be the parentheses operator. Ie, you should be able to
-   access element 2,3 via `mat(2,3)`.
+      1. Also, write a free function so that `std::cout << m;` works
+   8. A function that returns the transpose of the matrix
+   9. A function that returns the complex conjugate of the matrix
+   10. A function that returns the conjugate transpose of the matrix
+   11. Functions that perform the transpose, complex conjugate, and conjugate transpose in place (ie, they modify the matrix rather than return a new one)
+   12. **For extra credit:** Computing the eigenvalues and eigenvectors of a matrix (**HINT:** - use blas/lapack internally)
 
 The conjugate transpose is very common in quantum chemistry.
 For details on what it is, see [Wikipedia](https://en.wikipedia.org/wiki/Conjugate_transpose).
