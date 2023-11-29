@@ -19,17 +19,17 @@ is a large part of software engineering.
 
 2. The matrix should be constructable three different ways:
     1. With no arguments (`Matrix m;`)
-    2. With a desired number of rows and columns (`Matrix m(3,2)`)
+    2. With a desired number of rows and columns (`Matrix m(3,2);`)
     3. Via copying an existing matrix
 
 3. Accessing the elements of the matrix should be the parentheses operator. Ie, you should be able to
-   access element 2,3 via `mat(2,3)`.
+   access element 2,3 via `mat(2,3)`. The element should be modifiable via this method (`mat(2,3) = 10.0`).
    
 4. The matrix should have the ability to be resized. When using this function,
    the user should assume that any existing data is either destroyed or
    invalid after resizing. 
 
-5. The class should support the following operations:
+5. The matrix class should support the following operations, either via member functions or operators:
    1. Matrix addition (overload the `+` operator) 
    2. Matrix multiplication (overload the `*` operator)
    3. Matrix element-wise multiplication
@@ -49,8 +49,8 @@ is a large part of software engineering.
 The conjugate transpose is very common in quantum chemistry.
 For details on what it is, see [Wikipedia](https://en.wikipedia.org/wiki/Conjugate_transpose).
 
-As a general guide, you should always be thinking about how you can re-use
-existing functions to implement new features. For example, a function that
+**As a general hint, you should always be thinking about how you can re-use
+existing functions to implement new features.** For example, a function that
 returns a transpose and the function that transposes in place are very
 related. Can one use the other?
 
